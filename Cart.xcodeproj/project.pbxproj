@@ -11,6 +11,9 @@
 		D25CA8F4283AA7C200EEAF7D /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CA8F3283AA7C200EEAF7D /* ItemModel.swift */; };
 		D25CA8F7283AA85F00EEAF7D /* CodableBundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CA8F6283AA85F00EEAF7D /* CodableBundleExtension.swift */; };
 		D25CA8FE283AB3D000EEAF7D /* ItemRowComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CA8FD283AB3D000EEAF7D /* ItemRowComponentView.swift */; };
+		D25CA900283AC32A00EEAF7D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CA8FF283AC32A00EEAF7D /* SettingsView.swift */; };
+		D25CA902283AC3D900EEAF7D /* SettingsLabelComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CA901283AC3D900EEAF7D /* SettingsLabelComponentView.swift */; };
+		D25CA904283AC47A00EEAF7D /* SettingsRowComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CA903283AC47A00EEAF7D /* SettingsRowComponentView.swift */; };
 		D2E6673D283A8FB400027B87 /* CartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6673C283A8FB400027B87 /* CartApp.swift */; };
 		D2E6673F283A8FB400027B87 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6673E283A8FB400027B87 /* ContentView.swift */; };
 		D2E66741283A8FB800027B87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2E66740283A8FB800027B87 /* Assets.xcassets */; };
@@ -25,6 +28,9 @@
 		D25CA8F3283AA7C200EEAF7D /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		D25CA8F6283AA85F00EEAF7D /* CodableBundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableBundleExtension.swift; sourceTree = "<group>"; };
 		D25CA8FD283AB3D000EEAF7D /* ItemRowComponentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemRowComponentView.swift; sourceTree = "<group>"; };
+		D25CA8FF283AC32A00EEAF7D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		D25CA901283AC3D900EEAF7D /* SettingsLabelComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabelComponentView.swift; sourceTree = "<group>"; };
+		D25CA903283AC47A00EEAF7D /* SettingsRowComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowComponentView.swift; sourceTree = "<group>"; };
 		D2E66739283A8FB400027B87 /* Cart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2E6673C283A8FB400027B87 /* CartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartApp.swift; sourceTree = "<group>"; };
 		D2E6673E283A8FB400027B87 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				D25CA8FD283AB3D000EEAF7D /* ItemRowComponentView.swift */,
+				D25CA901283AC3D900EEAF7D /* SettingsLabelComponentView.swift */,
+				D25CA903283AC47A00EEAF7D /* SettingsRowComponentView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -124,6 +132,7 @@
 				D2E6674B283A970C00027B87 /* MainView.swift */,
 				D2E6674D283A97C600027B87 /* ItemsView.swift */,
 				D2E6674F283A98FF00027B87 /* AddNewView.swift */,
+				D25CA8FF283AC32A00EEAF7D /* SettingsView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -199,9 +208,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D25CA902283AC3D900EEAF7D /* SettingsLabelComponentView.swift in Sources */,
 				D25CA8F4283AA7C200EEAF7D /* ItemModel.swift in Sources */,
 				D2E6673F283A8FB400027B87 /* ContentView.swift in Sources */,
 				D2E66750283A98FF00027B87 /* AddNewView.swift in Sources */,
+				D25CA904283AC47A00EEAF7D /* SettingsRowComponentView.swift in Sources */,
+				D25CA900283AC32A00EEAF7D /* SettingsView.swift in Sources */,
 				D2E6674C283A970C00027B87 /* MainView.swift in Sources */,
 				D25CA8FE283AB3D000EEAF7D /* ItemRowComponentView.swift in Sources */,
 				D2E6673D283A8FB400027B87 /* CartApp.swift in Sources */,

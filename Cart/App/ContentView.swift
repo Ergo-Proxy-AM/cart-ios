@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isShowingSettings: Bool = false
+    
     let items: [Item] = Bundle.main.decode("items.json")
 
     
@@ -19,6 +21,16 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("{BUDGET}")
+            .navigationBarItems(trailing:
+                                    Button(action: {
+                                        isShowingSettings = true
+                                    }) {
+                                        Image(systemName: "slider.horizontal.3")
+                                    }//:BUTTON
+                                    .sheet(isPresented: $isShowingSettings) {
+                                        SettingsView()
+                                    }
+            )
         }
     }
 }
