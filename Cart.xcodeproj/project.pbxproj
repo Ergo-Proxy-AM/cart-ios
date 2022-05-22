@@ -7,18 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D25CA8EF283AA72700EEAF7D /* items.json in Resources */ = {isa = PBXBuildFile; fileRef = D25CA8EE283AA72700EEAF7D /* items.json */; };
+		D25CA8F4283AA7C200EEAF7D /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CA8F3283AA7C200EEAF7D /* ItemModel.swift */; };
+		D25CA8F7283AA85F00EEAF7D /* CodableBundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CA8F6283AA85F00EEAF7D /* CodableBundleExtension.swift */; };
+		D25CA8FE283AB3D000EEAF7D /* ItemRowComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CA8FD283AB3D000EEAF7D /* ItemRowComponentView.swift */; };
 		D2E6673D283A8FB400027B87 /* CartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6673C283A8FB400027B87 /* CartApp.swift */; };
 		D2E6673F283A8FB400027B87 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6673E283A8FB400027B87 /* ContentView.swift */; };
 		D2E66741283A8FB800027B87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2E66740283A8FB800027B87 /* Assets.xcassets */; };
 		D2E66744283A8FB800027B87 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2E66743283A8FB800027B87 /* Preview Assets.xcassets */; };
+		D2E6674C283A970C00027B87 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6674B283A970C00027B87 /* MainView.swift */; };
+		D2E6674E283A97C600027B87 /* ItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6674D283A97C600027B87 /* ItemsView.swift */; };
+		D2E66750283A98FF00027B87 /* AddNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6674F283A98FF00027B87 /* AddNewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D25CA8EE283AA72700EEAF7D /* items.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = items.json; sourceTree = "<group>"; };
+		D25CA8F3283AA7C200EEAF7D /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		D25CA8F6283AA85F00EEAF7D /* CodableBundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableBundleExtension.swift; sourceTree = "<group>"; };
+		D25CA8FD283AB3D000EEAF7D /* ItemRowComponentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemRowComponentView.swift; sourceTree = "<group>"; };
 		D2E66739283A8FB400027B87 /* Cart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2E6673C283A8FB400027B87 /* CartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartApp.swift; sourceTree = "<group>"; };
 		D2E6673E283A8FB400027B87 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D2E66740283A8FB800027B87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2E66743283A8FB800027B87 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D2E6674B283A970C00027B87 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		D2E6674D283A97C600027B87 /* ItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsView.swift; sourceTree = "<group>"; };
+		D2E6674F283A98FF00027B87 /* AddNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +46,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D25CA8EB283AA6D400EEAF7D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D25CA8EE283AA72700EEAF7D /* items.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D25CA8F2283AA79C00EEAF7D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D25CA8F3283AA7C200EEAF7D /* ItemModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D25CA8F5283AA84C00EEAF7D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D25CA8F6283AA85F00EEAF7D /* CodableBundleExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		D25CA8F8283AAA7200EEAF7D /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				D25CA8FD283AB3D000EEAF7D /* ItemRowComponentView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		D2E66730283A8FB400027B87 = {
 			isa = PBXGroup;
 			children = (
@@ -51,8 +97,11 @@
 		D2E6673B283A8FB400027B87 /* Cart */ = {
 			isa = PBXGroup;
 			children = (
-				D2E6673C283A8FB400027B87 /* CartApp.swift */,
-				D2E6673E283A8FB400027B87 /* ContentView.swift */,
+				D25CA8F8283AAA7200EEAF7D /* Component */,
+				D25CA8F5283AA84C00EEAF7D /* Extension */,
+				D25CA8F2283AA79C00EEAF7D /* Model */,
+				D25CA8EB283AA6D400EEAF7D /* Data */,
+				D2E6674A283A964200027B87 /* App */,
 				D2E66740283A8FB800027B87 /* Assets.xcassets */,
 				D2E66742283A8FB800027B87 /* Preview Content */,
 			);
@@ -65,6 +114,18 @@
 				D2E66743283A8FB800027B87 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D2E6674A283A964200027B87 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D2E6673C283A8FB400027B87 /* CartApp.swift */,
+				D2E6673E283A8FB400027B87 /* ContentView.swift */,
+				D2E6674B283A970C00027B87 /* MainView.swift */,
+				D2E6674D283A97C600027B87 /* ItemsView.swift */,
+				D2E6674F283A98FF00027B87 /* AddNewView.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +188,7 @@
 			files = (
 				D2E66744283A8FB800027B87 /* Preview Assets.xcassets in Resources */,
 				D2E66741283A8FB800027B87 /* Assets.xcassets in Resources */,
+				D25CA8EF283AA72700EEAF7D /* items.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +199,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D25CA8F4283AA7C200EEAF7D /* ItemModel.swift in Sources */,
 				D2E6673F283A8FB400027B87 /* ContentView.swift in Sources */,
+				D2E66750283A98FF00027B87 /* AddNewView.swift in Sources */,
+				D2E6674C283A970C00027B87 /* MainView.swift in Sources */,
+				D25CA8FE283AB3D000EEAF7D /* ItemRowComponentView.swift in Sources */,
 				D2E6673D283A8FB400027B87 /* CartApp.swift in Sources */,
+				D25CA8F7283AA85F00EEAF7D /* CodableBundleExtension.swift in Sources */,
+				D2E6674E283A97C600027B87 /* ItemsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +343,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,6 +373,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
