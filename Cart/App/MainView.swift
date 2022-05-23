@@ -15,7 +15,7 @@ struct MainView: View {
                     Image(systemName: "square.grid.2x2")
                     Text("Browse")
                 }
-            AddNewView()
+            AddNewView(item: Item(id: 1, name: "Testowy produkt w koszyku", price: 1222.22, currency: "PLN", deadline: "10/05/2022"))
                 .tabItem {
                     Image(systemName: "plus.square")
                     Text("Add")

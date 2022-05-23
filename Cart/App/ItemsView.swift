@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct ItemsView: View {
+    let items: [Item] = Bundle.main.decode("items.json")
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            List {
+                ForEach(items) { item in
+                    NavigationLink(destination: AddNewView(item: item)) {
+                        ItemRowComponentView(item: item)
+                                .padding(.vertical, 4)
+                    }
+                }
+            }
+        }
     }
 }
 

@@ -17,11 +17,22 @@ struct ItemRowComponentView: View {
                 Text(item.name)
                     .font(.title2)
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                Text("\(NSString(format: "%.2f", item.price)) \(item.currency) \t \(item.deadline)")
-                    .font(.caption)
+                HStack {
+                    Text("\(NSString(format: "%.2f", item.price)) \(item.currency)")
+                        .font(.caption)
                     .foregroundColor(.secondary)
-                    
+                    Spacer()
+                    Text("\(item.deadline)")
+                        .font(.caption)
+                    .foregroundColor(.secondary)
+                }
             })
+            Spacer()
+            Button(action: {
+                print("hi!") // paid action
+            }) {
+                Image(systemName: "checkmark.circle.fill")
+            }.padding()
         }
     }
 }
