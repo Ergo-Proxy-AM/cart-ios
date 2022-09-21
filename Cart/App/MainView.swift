@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct MainView: View {
+    @Environment(\.managedObjectContext) var managedObjectContext
+
+    
     var body: some View {
         TabView {
             ContentView()
@@ -15,12 +18,13 @@ struct MainView: View {
                     Image(systemName: "square.grid.2x2")
                     Text("Browse")
                 }
-            AddNewView(item: Item(id: 1, name: "Testowy produkt w koszyku", price: 1222.22, currency: "PLN", deadline: "10/05/2022"))
+            AddNewView()
                 .tabItem {
                     Image(systemName: "plus.square")
                     Text("Add")
                 }
             ItemsView()
+                .environment(\.managedObjectContext, self.managedObjectContext)
                 .tabItem {
                     Image(systemName: "square.and.pencil")
                     Text("Items")

@@ -9,20 +9,20 @@ import SwiftUI
 
 struct ItemRowComponentView: View {
     
-    let item: Item
+    let task: Task
     
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 5, content: {
-                Text(item.name)
+                Text(task.name!)
                     .font(.title2)
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 HStack {
-                    Text("\(NSString(format: "%.2f", item.price)) \(item.currency)")
+                    Text("\(NSString(format: "%.2f", task.price)) \(task.currency!)")
                         .font(.caption)
                     .foregroundColor(.secondary)
                     Spacer()
-                    Text("\(item.deadline)")
+                    Text("\(task.deadline!)")
                         .font(.caption)
                     .foregroundColor(.secondary)
                 }
@@ -39,7 +39,7 @@ struct ItemRowComponentView: View {
 
 struct ItemListComponentView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemRowComponentView(item: Item(id: 1, name: "Testowy produkt w koszyku", price: 1222.22, currency: "PLN", deadline: "10/05/2022") )
+        ItemRowComponentView(task: Task() )
             .previewLayout(.sizeThatFits)
             .padding()
     }

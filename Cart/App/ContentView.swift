@@ -10,15 +10,15 @@ import SwiftUI
 struct ContentView: View {
     @State private var isShowingSettings: Bool = false
     
-    let items: [Item] = Bundle.main.decode("items.json")
+//    let tasks: [Task] = Bundle.main.decode("items.json")
 
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(items) { item in
-                    ItemRowComponentView(item: item)
-                }
+//                ForEach(tasks) { task in
+//                    ItemRowComponentView(task: task)
+//                }
             }
             .navigationTitle("{BUDGET}")
             .navigationBarItems(trailing:

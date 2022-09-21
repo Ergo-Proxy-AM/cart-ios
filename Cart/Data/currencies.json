@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "label": "PLN"
+    },
+    {
+        "id": 2,
+        "label": "EUR"
+    },
+    {
+        "id": 3,
+        "label": "USD"
+    }
+]

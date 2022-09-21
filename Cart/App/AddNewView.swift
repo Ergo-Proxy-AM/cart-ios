@@ -8,15 +8,48 @@
 import SwiftUI
 
 struct AddNewView: View {
-    let item: Item
+    @Environment(\.managedObjectContext) var managedObjectContext
+
+    @State private var name: String = ""
+    @State private var price: Float = 0
+    @State private var currency: String = ""
+    @State private var deadline: Date = Date()
+
+    let currencies: [Currency] = Bundle.main.decode("currencies.json")
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading, spacing: 20) {
+            TextField("Name", text: $name)
+                .padding()
+                .background(Color(UIColor.tertiarySystemFill))
+                .cornerRadius(9)
+                .font(.system(size: 24, weight: .bold, design: .default))
+            
+            
+            Button(action: {
+                let task = Task(context: self.managedObjectContext)
+                task.name = self.name
+                task.price = self.price
+                task.currency = self.currency
+                task.deadline = self.deadline
+                
+                do {
+                  try self.managedObjectContext.save()
+                  // print("New todo: \(todo.name ?? ""), Priority: \(todo.priority ?? "")")
+                } catch {
+                  print(error)
+                }
+            }, label: {
+                Text("save")
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+                    .padding()
+            })
+        }
     }
 }
 
 struct AddNewView_Previews: PreviewProvider {
     static var previews: some View {
-        AddNewView(item: Item(id: 1, name: "Testowy produkt w koszyku", price: 1222.22, currency: "PLN", deadline: "10/05/2022"))
+        AddNewView()
     }
 }
