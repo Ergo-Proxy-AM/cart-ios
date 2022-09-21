@@ -19,11 +19,27 @@ struct AddNewView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            TextField("Name", text: $name)
-                .padding()
-                .background(Color(UIColor.tertiarySystemFill))
-                .cornerRadius(9)
-                .font(.system(size: 24, weight: .bold, design: .default))
+            Form {
+                TextField("Name", text: $name)
+                    .padding()
+                    .background(Color(UIColor.tertiarySystemFill))
+                    .cornerRadius(9)
+                    .font(.system(size: 24, weight: .bold, design: .default))
+                TextField("Price", value: $price, format: .number)
+                    .padding()
+                    .background(Color(UIColor.tertiarySystemFill))
+                    .cornerRadius(9)
+                    .font(.system(size: 24, weight: .bold, design: .default))
+                    .keyboardType(.decimalPad)
+                Picker("Currency", selection: $currency) {
+                    ForEach(currencies) { currency in
+                        Text(currency.label)
+                    }
+                }.pickerStyle(WheelPickerStyle())
+                
+                DatePicker("Deadline", selection: $deadline)
+                    .datePickerStyle(WheelDatePickerStyle())
+            }
             
             
             Button(action: {

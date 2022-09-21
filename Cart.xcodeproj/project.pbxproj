@@ -12,7 +12,9 @@
 		D25CA900283AC32A00EEAF7D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CA8FF283AC32A00EEAF7D /* SettingsView.swift */; };
 		D25CA902283AC3D900EEAF7D /* SettingsLabelComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CA901283AC3D900EEAF7D /* SettingsLabelComponentView.swift */; };
 		D25CA904283AC47A00EEAF7D /* SettingsRowComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25CA903283AC47A00EEAF7D /* SettingsRowComponentView.swift */; };
-		D2E6673D283A8FB400027B87 /* CartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6673C283A8FB400027B87 /* CartApp.swift */; };
+		D29ABFC628DB901700FFB790 /* currencies.json in Resources */ = {isa = PBXBuildFile; fileRef = D29ABFC528DB901700FFB790 /* currencies.json */; };
+		D29ABFEE28DBA25800FFB790 /* CartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29ABFED28DBA25800FFB790 /* CartApp.swift */; };
+		D29ABFF028DBA29D00FFB790 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29ABFEF28DBA29D00FFB790 /* Persistence.swift */; };
 		D2E6673F283A8FB400027B87 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6673E283A8FB400027B87 /* ContentView.swift */; };
 		D2E66741283A8FB800027B87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2E66740283A8FB800027B87 /* Assets.xcassets */; };
 		D2E66744283A8FB800027B87 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2E66743283A8FB800027B87 /* Preview Assets.xcassets */; };
@@ -20,8 +22,6 @@
 		D2E6674E283A97C600027B87 /* ItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6674D283A97C600027B87 /* ItemsView.swift */; };
 		D2E66750283A98FF00027B87 /* AddNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6674F283A98FF00027B87 /* AddNewView.swift */; };
 		D2FAE84328DB75F600EDC856 /* Cart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2FAE84128DB75F500EDC856 /* Cart.xcdatamodeld */; };
-		D2FAE84528DB76EE00EDC856 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FAE84428DB76EE00EDC856 /* AppDelegate.swift */; };
-		D2FAE84728DB7A0900EDC856 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FAE84628DB7A0900EDC856 /* SceneDelegate.swift */; };
 		D2FAE84E28DB879A00EDC856 /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FAE84D28DB879A00EDC856 /* CurrencyModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,8 +31,10 @@
 		D25CA8FF283AC32A00EEAF7D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D25CA901283AC3D900EEAF7D /* SettingsLabelComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabelComponentView.swift; sourceTree = "<group>"; };
 		D25CA903283AC47A00EEAF7D /* SettingsRowComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowComponentView.swift; sourceTree = "<group>"; };
+		D29ABFC528DB901700FFB790 /* currencies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = currencies.json; sourceTree = "<group>"; };
+		D29ABFED28DBA25800FFB790 /* CartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartApp.swift; sourceTree = "<group>"; };
+		D29ABFEF28DBA29D00FFB790 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		D2E66739283A8FB400027B87 /* Cart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cart.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2E6673C283A8FB400027B87 /* CartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartApp.swift; sourceTree = "<group>"; };
 		D2E6673E283A8FB400027B87 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D2E66740283A8FB800027B87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2E66743283A8FB800027B87 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -40,10 +42,7 @@
 		D2E6674D283A97C600027B87 /* ItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsView.swift; sourceTree = "<group>"; };
 		D2E6674F283A98FF00027B87 /* AddNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewView.swift; sourceTree = "<group>"; };
 		D2FAE84228DB75F500EDC856 /* Cart.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cart.xcdatamodel; sourceTree = "<group>"; };
-		D2FAE84428DB76EE00EDC856 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D2FAE84628DB7A0900EDC856 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D2FAE84D28DB879A00EDC856 /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
-		D2FAE84F28DB88A100EDC856 /* currencies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = currencies.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +59,7 @@
 		D25CA8EB283AA6D400EEAF7D /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				D2FAE84F28DB88A100EDC856 /* currencies.json */,
+				D29ABFC528DB901700FFB790 /* currencies.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -110,8 +109,7 @@
 				D2E66740283A8FB800027B87 /* Assets.xcassets */,
 				D2E66742283A8FB800027B87 /* Preview Content */,
 				D2FAE84128DB75F500EDC856 /* Cart.xcdatamodeld */,
-				D2FAE84428DB76EE00EDC856 /* AppDelegate.swift */,
-				D2FAE84628DB7A0900EDC856 /* SceneDelegate.swift */,
+				D29ABFEF28DBA29D00FFB790 /* Persistence.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -127,12 +125,12 @@
 		D2E6674A283A964200027B87 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				D2E6673C283A8FB400027B87 /* CartApp.swift */,
 				D2E6673E283A8FB400027B87 /* ContentView.swift */,
 				D2E6674B283A970C00027B87 /* MainView.swift */,
 				D2E6674D283A97C600027B87 /* ItemsView.swift */,
 				D2E6674F283A98FF00027B87 /* AddNewView.swift */,
 				D25CA8FF283AC32A00EEAF7D /* SettingsView.swift */,
+				D29ABFED28DBA25800FFB790 /* CartApp.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -205,6 +203,7 @@
 			files = (
 				D2E66744283A8FB800027B87 /* Preview Assets.xcassets in Resources */,
 				D2E66741283A8FB800027B87 /* Assets.xcassets in Resources */,
+				D29ABFC628DB901700FFB790 /* currencies.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,16 +216,15 @@
 			files = (
 				D2FAE84E28DB879A00EDC856 /* CurrencyModel.swift in Sources */,
 				D25CA902283AC3D900EEAF7D /* SettingsLabelComponentView.swift in Sources */,
-				D2FAE84728DB7A0900EDC856 /* SceneDelegate.swift in Sources */,
 				D2E6673F283A8FB400027B87 /* ContentView.swift in Sources */,
 				D2E66750283A98FF00027B87 /* AddNewView.swift in Sources */,
 				D25CA904283AC47A00EEAF7D /* SettingsRowComponentView.swift in Sources */,
 				D25CA900283AC32A00EEAF7D /* SettingsView.swift in Sources */,
 				D2E6674C283A970C00027B87 /* MainView.swift in Sources */,
+				D29ABFF028DBA29D00FFB790 /* Persistence.swift in Sources */,
+				D29ABFEE28DBA25800FFB790 /* CartApp.swift in Sources */,
 				D2FAE84328DB75F600EDC856 /* Cart.xcdatamodeld in Sources */,
-				D2FAE84528DB76EE00EDC856 /* AppDelegate.swift in Sources */,
 				D25CA8FE283AB3D000EEAF7D /* ItemRowComponentView.swift in Sources */,
-				D2E6673D283A8FB400027B87 /* CartApp.swift in Sources */,
 				D25CA8F7283AA85F00EEAF7D /* CodableBundleExtension.swift in Sources */,
 				D2E6674E283A97C600027B87 /* ItemsView.swift in Sources */,
 			);
