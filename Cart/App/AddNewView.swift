@@ -17,7 +17,8 @@ struct AddNewView: View {
     @State private var createdAt: Date = Date()
     
     @Binding var tabSelection: Int
-
+  
+    var editTask: Task?
     let currencies: [Currency] = Bundle.main.decode("currencies.json")
     
     var body: some View {
@@ -42,11 +43,20 @@ struct AddNewView: View {
                 
                 DatePicker("Deadline", selection: $deadline)
                     .datePickerStyle(WheelDatePickerStyle())
+                    .onAppear() {
+                        if (editTask != nil) {
+                            self.name = editTask!.name!
+                            self.price = editTask!.price
+                            self.currency = editTask!.currency!
+                            self.deadline = editTask!.deadline!
+                            self.createdAt = editTask!.createdAt!
+                        }
+                    }
             }
             
             
             Button(action: {
-                let task = Task(context: self.managedObjectContext)
+                let task = editTask ?? Task(context: self.managedObjectContext)
                 task.name = self.name
                 task.price = self.price
                 task.currency = self.currency
@@ -71,6 +81,6 @@ struct AddNewView: View {
 
 struct AddNewView_Previews: PreviewProvider {
     static var previews: some View {
-        AddNewView(tabSelection: .constant(2))
+        AddNewView(tabSelection: .constant(2), editTask: nil)
     }
 }

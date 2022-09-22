@@ -16,7 +16,7 @@ struct ItemsView: View {
         NavigationView {
             List {
                 ForEach(self.tasks, id: \.self) { task in
-                    NavigationLink(destination: AddNewView(tabSelection: .constant(2))) {
+                    NavigationLink(destination: AddNewView(tabSelection: .constant(2), editTask: task)) {
                         ItemRowComponentView(task: task)
                                 .padding(.vertical, 4)
                     }

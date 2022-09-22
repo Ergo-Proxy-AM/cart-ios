@@ -19,7 +19,7 @@ struct MainView: View {
                     Text("Browse")
                 }
                 .tag(1)
-            AddNewView(tabSelection: $tabSelection)
+            AddNewView(tabSelection: $tabSelection, editTask: nil)
                 .tabItem {
                     Image(systemName: "plus.square")
                     Text("Add")
