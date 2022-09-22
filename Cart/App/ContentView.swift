@@ -9,16 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var isShowingSettings: Bool = false
-    
-//    let tasks: [Task] = Bundle.main.decode("items.json")
-
+    @FetchRequest(entity: Task.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Task.deadline, ascending: false)]) var tasks: FetchedResults<Task>
     
     var body: some View {
         NavigationView {
             List {
-//                ForEach(tasks) { task in
-//                    ItemRowComponentView(task: task)
-//                }
+                ForEach(self.tasks, id: \.self) { task in
+                    ItemRowComponentView(task: task)
+                }
             }
             .navigationTitle("{BUDGET}")
             .navigationBarItems(trailing:

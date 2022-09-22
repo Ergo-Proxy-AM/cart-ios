@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct ItemsView: View {
-//    let tasks: [Task] = Bundle.main.decode("items.json")
+    @FetchRequest(entity: Task.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Task.createdAt, ascending: false)]) var tasks: FetchedResults<Task>
 
     var body: some View {
         NavigationView {
             List {
-//                ForEach(tasks) { task in
-//                    NavigationLink(destination: AddNewView(task: task)) {
-//                        ItemRowComponentView(task: task)
-//                                .padding(.vertical, 4)
-//                    }
-//                }
+                ForEach(self.tasks, id: \.self) { task in
+                    NavigationLink(destination: AddNewView(tabSelection: .constant(2))) {
+                        ItemRowComponentView(task: task)
+                                .padding(.vertical, 4)
+                    }
+                }
             }
         }
     }

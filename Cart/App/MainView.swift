@@ -9,26 +9,27 @@ import SwiftUI
 
 struct MainView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
-
+    @State private var tabSelection: Int = 1
     
     var body: some View {
-        TabView {
+        TabView(selection: $tabSelection) {
             ContentView()
                 .tabItem {
                     Image(systemName: "square.grid.2x2")
                     Text("Browse")
                 }
-            AddNewView()
+                .tag(1)
+            AddNewView(tabSelection: $tabSelection)
                 .tabItem {
                     Image(systemName: "plus.square")
                     Text("Add")
-                }
+                }.tag(2)
             ItemsView()
                 .environment(\.managedObjectContext, self.managedObjectContext)
                 .tabItem {
                     Image(systemName: "square.and.pencil")
                     Text("Items")
-                }
+                }.tag(3)
         }
     }
 }

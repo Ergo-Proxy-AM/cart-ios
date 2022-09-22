@@ -14,6 +14,9 @@ struct AddNewView: View {
     @State private var price: Float = 0
     @State private var currency: String = ""
     @State private var deadline: Date = Date()
+    @State private var createdAt: Date = Date()
+    
+    @Binding var tabSelection: Int
 
     let currencies: [Currency] = Bundle.main.decode("currencies.json")
     
@@ -48,9 +51,11 @@ struct AddNewView: View {
                 task.price = self.price
                 task.currency = self.currency
                 task.deadline = self.deadline
+                task.createdAt = self.createdAt
                 
                 do {
                   try self.managedObjectContext.save()
+                    self.tabSelection = 3
                   // print("New todo: \(todo.name ?? ""), Priority: \(todo.priority ?? "")")
                 } catch {
                   print(error)
@@ -66,6 +71,6 @@ struct AddNewView: View {
 
 struct AddNewView_Previews: PreviewProvider {
     static var previews: some View {
-        AddNewView()
+        AddNewView(tabSelection: .constant(2))
     }
 }

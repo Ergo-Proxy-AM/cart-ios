@@ -22,7 +22,10 @@ struct ItemRowComponentView: View {
                         .font(.caption)
                     .foregroundColor(.secondary)
                     Spacer()
-                    Text("\(task.deadline!)")
+                    Text(task.deadline!, style: .date)
+                        .font(.caption)
+                    .foregroundColor(.secondary)
+                    Text(task.deadline!, style: .time)
                         .font(.caption)
                     .foregroundColor(.secondary)
                 }
