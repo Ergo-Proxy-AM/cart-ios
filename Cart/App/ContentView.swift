@@ -33,7 +33,6 @@ struct ContentView: View {
                                     }//:BUTTON
                                     .sheet(isPresented: $isShowingSettings) {
                                         SettingsView()
-                                            .environment(\.managedObjectContext, self.managedObjectContext)
 
                                     }
             )

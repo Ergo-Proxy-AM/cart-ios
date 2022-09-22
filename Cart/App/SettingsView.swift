@@ -24,7 +24,7 @@ struct SettingsView: View {
                         label:
                             SettingsLabelComponentView(labelText: "Budget", labelImage: "info.circle")
                     )  {
-                        TextField("Budget", value: $budget, format: .number)
+                        TextField("Budget", value: $budget, format: .currency(code: "PLN"))
                             .padding()
                             .background(Color(UIColor.tertiarySystemFill))
                             .cornerRadius(9)
@@ -36,22 +36,16 @@ struct SettingsView: View {
                         Button("Save", action: {
                             let storedBudget = appSetting.first
                             
-                            if (storedBudget != nil) {
-                                self.managedObjectContext.performAndWait {
-                                    storedBudget?.content = "\(NSString(format: "%.2f", self.budget))"
-                                }
-                                } else {
-                                let appSettings = AppSettings(context: self.managedObjectContext)
-                                appSettings.name = "budget"
-                                appSettings.content = "\(NSString(format: "%.2f", self.budget))"
+                            let appSettings = storedBudget ?? AppSettings(context: self.managedObjectContext)
+                            appSettings.name = "budget"
+                            appSettings.content = "\(NSString(format: "%.2f", self.budget))"
+                            
+                            do {
+                              try self.managedObjectContext.save()
                                 
-                                do {
-                                  try self.managedObjectContext.save()
-                                    
-                                    self.isSaved = true
-                                } catch {
-                                  print(error)
-                                }
+                                self.isSaved = true
+                            } catch {
+                              print(error)
                             }
                         })
                         

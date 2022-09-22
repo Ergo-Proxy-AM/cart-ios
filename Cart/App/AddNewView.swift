@@ -30,7 +30,7 @@ struct AddNewView: View {
                         .background(Color(UIColor.tertiarySystemFill))
                         .cornerRadius(9)
                         .font(.system(size: 24, weight: .bold, design: .default))
-                    TextField("Price", value: $price, format: .number)
+                    TextField("Price", value: $price, format: .currency(code: currency))
                         .padding()
                         .background(Color(UIColor.tertiarySystemFill))
                         .cornerRadius(9)
@@ -43,7 +43,6 @@ struct AddNewView: View {
                     }
                     
                     DatePicker("Deadline", selection: $deadline)
-                        .datePickerStyle(WheelDatePickerStyle())
                         .onAppear() {
                             if (editTask != nil) {
                                 self.name = editTask!.name!
@@ -77,6 +76,15 @@ struct AddNewView: View {
                         .padding()
                 })
             }
+            .navigationBarTitle(Text("Add new Task"), displayMode: .large)
+            .navigationBarItems(trailing:
+                                    Button(action: {
+                self.tabSelection = 1
+                                    }
+                                    ){
+                                        Image(systemName: "xmark")
+                                    }
+            )
         }
     }
 }
