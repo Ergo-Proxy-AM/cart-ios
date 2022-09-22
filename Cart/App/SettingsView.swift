@@ -9,12 +9,53 @@ import SwiftUI
 
 struct SettingsView: View {
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.managedObjectContext) var managedObjectContext
+
+    @FetchRequest(sortDescriptors: [], predicate: NSPredicate(format: "name = %@", "budget")) var appSetting: FetchedResults<AppSettings>
     
+    @State private var budget: Float = 0
+    @State private var isSaved: Bool = false
     
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 20) {
+                    GroupBox(
+                        label:
+                            SettingsLabelComponentView(labelText: "Budget", labelImage: "info.circle")
+                    )  {
+                        TextField("Budget", value: $budget, format: .number)
+                            .padding()
+                            .background(Color(UIColor.tertiarySystemFill))
+                            .cornerRadius(9)
+                            .font(.system(size: 24, weight: .bold, design: .default))
+                            .keyboardType(.decimalPad)
+                            .onAppear() {
+                                self.budget = (self.appSetting.first != nil) ? Float((self.appSetting.first?.content)!)! : 0
+                            }
+                        Button("Save", action: {
+                            let storedBudget = appSetting.first
+                            
+                            if (storedBudget != nil) {
+                                self.managedObjectContext.performAndWait {
+                                    storedBudget?.content = "\(NSString(format: "%.2f", self.budget))"
+                                }
+                                } else {
+                                let appSettings = AppSettings(context: self.managedObjectContext)
+                                appSettings.name = "budget"
+                                appSettings.content = "\(NSString(format: "%.2f", self.budget))"
+                                
+                                do {
+                                  try self.managedObjectContext.save()
+                                    
+                                    self.isSaved = true
+                                } catch {
+                                  print(error)
+                                }
+                            }
+                        })
+                        
+                    }
                     //:SECTION1
                     GroupBox(
                         label:
@@ -58,7 +99,9 @@ struct SettingsView: View {
                 )
                 .padding()
             }//:SCROLL
-        }//:NAVIGATION
+        }.alert(isPresented: $isSaved) {
+            Alert(title: Text("Saved!"), message: Text("Budget saved successful"), dismissButton: .default(Text("OK")))
+        } //:NAVIGATION
     }
 }
 

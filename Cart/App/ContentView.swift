@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
     @State private var isShowingSettings: Bool = false
+    
     @FetchRequest(entity: Task.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Task.deadline, ascending: false)]) var tasks: FetchedResults<Task>
+    
+    @FetchRequest(sortDescriptors: [], predicate: NSPredicate(format: "name = %@", "budget")) var appSetting: FetchedResults<AppSettings>
+
     
     var body: some View {
         NavigationView {
@@ -18,7 +24,7 @@ struct ContentView: View {
                     ItemRowComponentView(task: task)
                 }
             }
-            .navigationTitle("{BUDGET}")
+            .navigationTitle("\(appSetting.first?.content ?? "") PLN")
             .navigationBarItems(trailing:
                                     Button(action: {
                                         isShowingSettings = true
@@ -27,6 +33,8 @@ struct ContentView: View {
                                     }//:BUTTON
                                     .sheet(isPresented: $isShowingSettings) {
                                         SettingsView()
+                                            .environment(\.managedObjectContext, self.managedObjectContext)
+
                                     }
             )
         }

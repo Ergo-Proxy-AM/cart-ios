@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ItemsView: View {
+    @Environment(\.managedObjectContext) var managedObjectContext
+
     @FetchRequest(entity: Task.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Task.createdAt, ascending: false)]) var tasks: FetchedResults<Task>
 
     var body: some View {
@@ -19,8 +21,23 @@ struct ItemsView: View {
                                 .padding(.vertical, 4)
                     }
                 }
+                .onDelete(perform: deleteTask)
             }
         }
+    }
+    
+    
+    private func deleteTask(at offsets: IndexSet) {
+      for index in offsets {
+        let task = tasks[index]
+        managedObjectContext.delete(task)
+        
+        do {
+          try managedObjectContext.save()
+        } catch {
+          print(error)
+        }
+      }
     }
 }
 

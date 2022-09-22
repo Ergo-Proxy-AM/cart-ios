@@ -25,7 +25,6 @@ struct MainView: View {
                     Text("Add")
                 }.tag(2)
             ItemsView()
-                .environment(\.managedObjectContext, self.managedObjectContext)
                 .tabItem {
                     Image(systemName: "square.and.pencil")
                     Text("Items")
