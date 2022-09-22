@@ -32,7 +32,7 @@ struct ItemRowComponentView: View {
             })
             Spacer()
             Button(action: {
-                print("hi!") // paid action
+                print("\(task.currency)") // paid action
             }) {
                 Image(systemName: "checkmark.circle.fill")
             }.padding()
