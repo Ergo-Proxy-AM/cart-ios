@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct CartApp: App {
     let persistenceController = PersistenceController.shared
-
+    
     var body: some Scene {
         WindowGroup {
             MainView()

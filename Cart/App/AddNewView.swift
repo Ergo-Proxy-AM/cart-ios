@@ -9,7 +9,8 @@ import SwiftUI
 
 struct AddNewView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
-
+    @Environment(\.presentationMode) var presentationMode
+    
     @State private var name: String = ""
     @State private var price: Float = 0
     @State private var currency: String = "PLN"
@@ -17,7 +18,7 @@ struct AddNewView: View {
     @State private var createdAt: Date = Date()
     
     @Binding var tabSelection: Int
-  
+    
     var editTask: Task?
     let currencies: [Currency] = Bundle.main.decode("currencies.json")
     
@@ -64,11 +65,14 @@ struct AddNewView: View {
                     task.createdAt = self.createdAt
                     
                     do {
-                      try self.managedObjectContext.save()
+                        try self.managedObjectContext.save()
+                        if (editTask != nil) {
+                            presentationMode.wrappedValue.dismiss()
+                        }
                         self.tabSelection = 3
-                      // print("New todo: \(todo.name ?? ""), Priority: \(todo.priority ?? "")")
+                        // print("New todo: \(todo.name ?? ""), Priority: \(todo.priority ?? "")")
                     } catch {
-                      print(error)
+                        print(error)
                     }
                 }, label: {
                     Text("save")
@@ -79,11 +83,14 @@ struct AddNewView: View {
             .navigationBarTitle(Text("Add new Task"), displayMode: .large)
             .navigationBarItems(trailing:
                                     Button(action: {
+                if (editTask != nil) {
+                    presentationMode.wrappedValue.dismiss()
+                }
                 self.tabSelection = 1
-                                    }
-                                    ){
-                                        Image(systemName: "xmark")
-                                    }
+            }
+                                          ){
+                Image(systemName: "xmark")
+            }
             )
         }
     }
@@ -91,6 +98,14 @@ struct AddNewView: View {
 
 struct AddNewView_Previews: PreviewProvider {
     static var previews: some View {
-        AddNewView(tabSelection: .constant(2), editTask: nil)
+        PreviewWrapper()
+    }
+    
+    struct PreviewWrapper: View {
+        @State(initialValue: 2) var tabSelection: Int
+        
+        var body: some View {
+            AddNewView(tabSelection: $tabSelection, editTask: nil)
+        }
     }
 }

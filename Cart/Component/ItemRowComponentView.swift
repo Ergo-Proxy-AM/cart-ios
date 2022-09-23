@@ -20,14 +20,14 @@ struct ItemRowComponentView: View {
                 HStack {
                     Text("\(NSString(format: "%.2f", task.price)) \(task.currency!)")
                         .font(.caption)
-                    .foregroundColor(.secondary)
+                        .foregroundColor(.secondary)
                     Spacer()
                     Text(task.deadline!, style: .date)
                         .font(.caption)
-                    .foregroundColor(.secondary)
+                        .foregroundColor(.secondary)
                     Text(task.deadline!, style: .time)
                         .font(.caption)
-                    .foregroundColor(.secondary)
+                        .foregroundColor(.secondary)
                 }
             })
             Spacer()

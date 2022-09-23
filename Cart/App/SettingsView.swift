@@ -10,7 +10,7 @@ import SwiftUI
 struct SettingsView: View {
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) var managedObjectContext
-
+    
     @FetchRequest(sortDescriptors: [], predicate: NSPredicate(format: "name = %@", "budget")) var appSetting: FetchedResults<AppSettings>
     
     @State private var budget: Float = 0
@@ -41,11 +41,11 @@ struct SettingsView: View {
                             appSettings.content = "\(NSString(format: "%.2f", self.budget))"
                             
                             do {
-                              try self.managedObjectContext.save()
+                                try self.managedObjectContext.save()
                                 
                                 self.isSaved = true
                             } catch {
-                              print(error)
+                                print(error)
                             }
                         })
                         
@@ -68,9 +68,9 @@ struct SettingsView: View {
                     
                     //:SECTION2
                     GroupBox(label:
-                        SettingsLabelComponentView(labelText: "Customization", labelImage: "paintbrush")
-                        , content: {
-                            Divider().padding(.vertical, 4)
+                                SettingsLabelComponentView(labelText: "Customization", labelImage: "paintbrush")
+                             , content: {
+                        Divider().padding(.vertical, 4)
                     })
                     
                     //:SECTION3
@@ -85,11 +85,11 @@ struct SettingsView: View {
                 .navigationBarTitle(Text("Settings"), displayMode: .large)
                 .navigationBarItems(trailing:
                                         Button(action: {
-                                            presentationMode.wrappedValue.dismiss()
-                                        }
-                                        ){
-                                            Image(systemName: "xmark")
-                                        }
+                    presentationMode.wrappedValue.dismiss()
+                }
+                                              ){
+                    Image(systemName: "xmark")
+                }
                 )
                 .padding()
             }//:SCROLL

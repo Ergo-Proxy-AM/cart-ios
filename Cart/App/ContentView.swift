@@ -15,7 +15,7 @@ struct ContentView: View {
     @FetchRequest(entity: Task.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Task.deadline, ascending: false)]) var tasks: FetchedResults<Task>
     
     @FetchRequest(sortDescriptors: [], predicate: NSPredicate(format: "name = %@", "budget")) var appSetting: FetchedResults<AppSettings>
-
+    
     
     var body: some View {
         NavigationView {
@@ -27,14 +27,14 @@ struct ContentView: View {
             .navigationTitle("\(appSetting.first?.content ?? "") PLN")
             .navigationBarItems(trailing:
                                     Button(action: {
-                                        isShowingSettings = true
-                                    }) {
-                                        Image(systemName: "slider.horizontal.3")
-                                    }//:BUTTON
-                                    .sheet(isPresented: $isShowingSettings) {
-                                        SettingsView()
-
-                                    }
+                isShowingSettings = true
+            }) {
+                Image(systemName: "slider.horizontal.3")
+            }//:BUTTON
+                .sheet(isPresented: $isShowingSettings) {
+                    SettingsView()
+                    
+                }
             )
         }
     }
