@@ -20,20 +20,17 @@ struct MainView: View {
                     Text("Browse")
                 }
                 .tag(1)
-                .environment(\.managedObjectContext, self.managedObjectContext)
             AddNewView(tabSelection: $tabSelection, editTask: nil)
                 .tabItem {
                     Image(systemName: "plus.square")
                     Text("Add")
                 }
                 .tag(2)
-                .environment(\.managedObjectContext, self.managedObjectContext)
             ItemsView()
                 .tabItem {
                     Image(systemName: "square.and.pencil")
                     Text("Items")
                 }.tag(3)
-                .environment(\.managedObjectContext, self.managedObjectContext)
             
         }
     }

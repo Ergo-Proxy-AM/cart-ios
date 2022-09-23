@@ -19,7 +19,6 @@ struct ItemsView: View {
             List {
                 ForEach(self.tasks, id: \.self) { task in
                     NavigationLink(destination: AddNewView(tabSelection: $tabSelection, editTask: task)
-                        .environment(\.managedObjectContext, self.managedObjectContext)
                     ) {
                         ItemRowComponentView(task: task)
                             .padding(.vertical, 4)

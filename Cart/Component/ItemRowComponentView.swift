@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ItemRowComponentView: View {
     
-    let task: Task
+    @ObservedObject var task: Task
     
     var body: some View {
         HStack {
